@@ -8,6 +8,14 @@ Abra `dist/index.html` no navegador. Todos os arquivos usados pela página estã
 
 Para hospedar em um serviço estático, envie o conteúdo da pasta `dist`. A página inicial deve ser `index.html` na raiz publicada. O código-fonte também está sincronizado no projeto de Sites correspondente.
 
+## GitHub Pages
+
+Site: https://luissantosz.github.io/bar-adega-gordao/
+
+Em **Settings → Pages → Build and deployment**, mantenha **Source: GitHub Actions**. O workflow `.github/workflows/pages.yml` publica o conteúdo de `dist` automaticamente a cada atualização da branch `main`; não é necessário compilar o projeto.
+
+Edite os arquivos dentro de `dist`, salve na branch `main` e acompanhe a publicação em **Actions → Publicar catálogo no GitHub Pages**. Também é possível iniciar uma publicação pelo botão **Run workflow**. Os caminhos de CSS, JavaScript, fontes e imagens são relativos, compatíveis com o endereço do projeto.
+
 ## Atualizar os dados
 
 Edite **`dist/catalogo.js`** em um editor de texto, por exemplo VS Code:

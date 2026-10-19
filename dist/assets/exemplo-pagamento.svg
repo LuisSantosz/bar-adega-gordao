@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <title>Imagem de exemplo para a seção de pagamento</title>
+  <rect x="4" y="4" width="232" height="232" rx="24" fill="#101722" fill-opacity=".7" stroke="#b8c6d9" stroke-opacity=".5" stroke-width="2" stroke-dasharray="7 7"/>
+  <g fill="none" stroke="#b8c6d9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="74" y="65" width="92" height="82" rx="10"/>
+    <circle cx="138" cy="89" r="8"/>
+    <path d="m75 131 27-28 27 29 14-14 22 22"/>
+  </g>
+  <text x="120" y="185" text-anchor="middle" fill="#b8c6d9" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.5">SUA IMAGEM</text>
+</svg>

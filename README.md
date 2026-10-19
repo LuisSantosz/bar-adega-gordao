@@ -33,6 +33,26 @@ Categorias disponíveis: `cervejas`, `destilados`, `energeticos`, `sem-alcool`. 
 
 Os contatos não preenchidos exibem um aviso claro ao clicar. Assim que os dados válidos forem cadastrados, a aplicação cria os links correspondentes automaticamente. Nenhum telefone de terceiros é usado como contato da adega.
 
+## Substituir as três imagens de exemplo
+
+Em `dist/index.html`, procure os comentários `IMAGEM 1`, `IMAGEM 2` e `IMAGEM 3`. Cada comentário identifica uma tag `<img>` pronta para receber sua imagem:
+
+| Posição | Arquivo de exemplo no atributo `src` |
+| --- | --- |
+| Canto superior esquerdo do letreiro | `assets/exemplo-letreiro-esquerda.svg` |
+| Canto inferior direito do letreiro | `assets/exemplo-letreiro-direita.svg` |
+| Entre o texto de pagamento e o cartão | `assets/exemplo-pagamento.svg` |
+
+Salve as novas imagens em `dist/assets/` e troque apenas o `src` correspondente. Exemplo:
+
+```html
+<img class="billboard-image billboard-image-top"
+     src="assets/logo-adega.png"
+     alt="" width="240" height="240" decoding="async">
+```
+
+Use PNG ou WebP com fundo transparente para logos ou mascotes. O CSS preserva a proporção e mostra a imagem inteira. `alt=""` indica uma imagem apenas decorativa; se ela trouxer informação nova, preencha `alt` com uma descrição breve. Os comentários ficam somente no código. No celular, as imagens do letreiro mantêm os cantos sem sobrepor o nome; a imagem de pagamento aparece entre o título e o cartão, em uma coluna.
+
 ## Funcionalidades
 
 - Textura de tijolos pretos e cartaz neon com fonte Permanent Marker e dinheiro decorativo animado.
@@ -94,3 +114,4 @@ O letreiro neon e o cartão de pagamento foram desenvolvidos sob medida em HTML 
 ## Revisão da animação do letreiro
 
 A chuva de dinheiro está limitada ao interior do card do letreiro, com recorte nas bordas arredondadas. O percurso começa no topo e termina na borda inferior, acompanhando a altura do card em qualquer largura de tela. A luz externa e o detalhe branco continuam fora desse recorte.
+

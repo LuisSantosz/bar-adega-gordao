@@ -80,3 +80,29 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
 .ticker-featured{color:var(--yellow);font-size:1.1em;letter-spacing:1.8px;font-weight:800;white-space:nowrap}
 @media(max-width:767px){.hero-topline{min-height:36px;margin:0 2px 12px;padding-top:3px}.billboard{min-height:245px;padding-top:38px;padding-bottom:38px}#heroTitle{margin:0}.ticker-featured{letter-spacing:1.2px}}
 @media(max-width:360px){.billboard{min-height:220px}}
+
+/* Imagens substituíveis: cantos do letreiro e centro da seção de pagamento.
+   object-fit:contain preserva a imagem inteira, inclusive logos transparentes. */
+.billboard{display:grid;grid-template-columns:clamp(68px,9vw,112px) minmax(0,1fr) clamp(68px,9vw,112px);gap:16px;padding:28px;align-items:center}
+.billboard-copy{grid-column:2;grid-row:1;container-type:inline-size}
+.billboard .name-top{font-size:clamp(20px,7.8cqi,62px)}
+.billboard .name-main{font-size:clamp(27px,12.5cqi,100px)}
+.billboard-image{display:block;position:relative;z-index:2;width:100%;height:auto;aspect-ratio:1;object-fit:contain;pointer-events:none}
+.billboard-image-top{grid-column:1;grid-row:1;align-self:start}
+.billboard-image-bottom{grid-column:3;grid-row:1;align-self:end}
+.payment-layout{grid-template-columns:minmax(0,.95fr) minmax(120px,.55fr) minmax(0,1.4fr);gap:28px}
+.payment-illustration{display:block;justify-self:center;width:100%;max-width:180px;height:auto;aspect-ratio:1;object-fit:contain}
+@media(max-width:991px){
+ .payment-layout{grid-template-columns:minmax(0,1fr);gap:24px;text-align:center}
+ .payment-copy h2{max-width:none}
+ .payment-illustration{max-width:150px}
+}
+@media(max-width:767px){
+ .billboard{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:24px 20px;min-height:0}
+ .billboard-copy{grid-column:1 / -1;grid-row:2}
+ .billboard-image{width:clamp(52px,11vw,72px)}
+ .billboard-image-top{grid-column:1;grid-row:1;justify-self:start}
+ .billboard-image-bottom{grid-column:2;grid-row:3;justify-self:end}
+ .payment-illustration{max-width:130px}
+}
+

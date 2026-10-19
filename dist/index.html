@@ -46,9 +46,13 @@
   <div class="billboard">
    <div class="money-rain" aria-hidden="true"></div>
    <span class="sign-screw screw-tl" aria-hidden="true"></span><span class="sign-screw screw-tr" aria-hidden="true"></span><span class="sign-screw screw-bl" aria-hidden="true"></span><span class="sign-screw screw-br" aria-hidden="true"></span>
+   <!-- IMAGEM 1: canto superior esquerdo do letreiro. Troque src pelo caminho da sua imagem, por exemplo assets/logo-adega.png. -->
+   <img class="billboard-image billboard-image-top" src="assets/exemplo-letreiro-esquerda.svg" alt="" width="240" height="240" decoding="async">
    <div class="billboard-copy">
     <h1 id="heroTitle"><span class="name-top">BAR E ADEGA</span><span class="name-main">DO GORDÃO</span></h1>
    </div>
+   <!-- IMAGEM 2: canto inferior direito do letreiro. Troque src pelo caminho da sua imagem, por exemplo assets/bebidas-adega.png. -->
+   <img class="billboard-image billboard-image-bottom" src="assets/exemplo-letreiro-direita.svg" alt="" width="240" height="240" decoding="async">
   </div>
  </div>
 </section>
@@ -69,6 +73,8 @@
 
 <section class="payment-section section-pad" id="pagamentos" aria-labelledby="paymentTitle"><div class="container"><div class="payment-layout">
  <div class="payment-copy"><h2 id="paymentTitle">Seu jeito de <span class="payment-title-accent">pagar.</span></h2></div>
+ <!-- IMAGEM 3: entre o texto e o cartão. Troque src pelo caminho da sua imagem, por exemplo assets/mascote-pagamento.png. -->
+ <img class="payment-illustration" src="assets/exemplo-pagamento.svg" alt="" width="240" height="240" loading="lazy" decoding="async">
  <div class="payment-card-wrap"><button type="button" class="payment-card" id="paymentCard" aria-expanded="false" aria-label="Mostrar formas de pagamento" aria-controls="paymentBack"><span class="payment-card-inner">
   <span class="payment-face payment-front" id="paymentFront"><span class="payment-card-top"><span class="card-store-name">BAR E ADEGA DO GORDÃO</span><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span><span class="card-chip" aria-hidden="true"></span><span class="card-message">FORMAS DE<br><strong>PAGAMENTO</strong></span><span class="payment-card-bottom"><span>Pagamento no estabelecimento</span><svg class="icon" aria-hidden="true"><use href="#i-flip"/></svg></span></span>
   <span class="payment-face payment-back" id="paymentBack" aria-hidden="true"><span class="payment-card-top"><span>FORMAS ACEITAS</span><svg class="icon"><use href="#i-flip"/></svg></span><span class="payment-methods"><span><svg class="icon"><use href="#i-card"/></svg><strong>Crédito</strong></span><span><svg class="icon"><use href="#i-card"/></svg><strong>Débito</strong></span><span><svg class="icon"><use href="#i-pix"/></svg><strong>Pix</strong></span><span><svg class="icon"><use href="#i-cash"/></svg><strong>Dinheiro</strong></span></span><span class="payment-small">Pagamento no estabelecimento.</span></span>
@@ -87,3 +93,4 @@
 <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-4" id="infoModalTitle"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar aviso"></button></div><div class="modal-body" id="infoModalText"></div><div class="modal-footer"><button type="button" class="btn btn-electric" data-bs-dismiss="modal">Entendi</button></div></div></div></div>
 </body>
 </html>
+

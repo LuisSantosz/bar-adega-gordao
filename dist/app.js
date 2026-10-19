@@ -13,9 +13,11 @@
 
   // Registros inválidos não quebram a consulta dos outros produtos.
   const validProducts = produtos.filter((p) => p.id && p.nome && Number.isFinite(p.preco) && p.preco >= 0);
+  const searchIndex = new Map(validProducts.map((p) => [p, normalize(`${p.nome} ${p.tipo} ${p.volume} ${categorias.find((c) => c.id === p.categoria)?.nome || ''}`)]));
+  let searchTimer;
   function getVisibleProducts() {
     const query = normalize(state.query.trim());
-    const result = validProducts.filter((p) => (state.category === 'todos' || p.categoria === state.category) && normalize(`${p.nome} ${p.tipo} ${p.volume} ${categorias.find((c) => c.id === p.categoria)?.nome || ''}`).includes(query));
+    const result = validProducts.filter((p) => (state.category === 'todos' || p.categoria === state.category) && searchIndex.get(p).includes(query));
     if (state.sort === 'price-asc') result.sort((a, b) => a.preco - b.preco);
     if (state.sort === 'price-desc') result.sort((a, b) => b.preco - a.preco);
     if (state.sort === 'name') result.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
@@ -30,6 +32,7 @@
       </article></div>`;
   }
   function render() {
+    clearTimeout(searchTimer);
     const visible = getVisibleProducts();
     $('productGrid').innerHTML = visible.map(productCard).join('');
     $('emptyState').hidden = visible.length !== 0;
@@ -51,7 +54,11 @@
     state.category = button.dataset.category;
     render();
   });
-  $('productSearch').addEventListener('input', (event) => { state.query = event.target.value; render(); });
+  $('productSearch').addEventListener('input', (event) => {
+    state.query = event.target.value;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(render, 120);
+  });
   $('productSort').addEventListener('change', (event) => { state.sort = event.target.value; render(); });
   $('resetFilters').addEventListener('click', () => {
     state.category = 'todos'; state.query = ''; state.sort = 'default';
@@ -130,17 +137,42 @@
     document.querySelector('meta[name="description"]').content = 'Conheça o catálogo do Bar e Adega do Gordão. Consulte bebidas, preços, formas de pagamento e contatos.';
   }
 
-  // Apenas decoração; não usa áudio, canvas ou bibliotecas de animação extras.
-  const notes = Array.from({ length: 9 }, (_, i) => `<img class="money-note" src="assets/money.svg" alt="" width="55" height="27" style="--x:${4 + i * 10.5}%;--duration:${8 + (i % 4) * 1.5}s;--delay:${-i * 1.7}s">`).join('');
-  const coins = Array.from({ length: 6 }, (_, i) => `<img class="money-note money-coin" src="assets/coin.svg" alt="" width="28" height="28" style="--x:${8 + i * 16}%;--duration:${7 + (i % 3) * 1.8}s;--delay:${-1.2 - i * 2.1}s">`).join('');
-  document.querySelector('.money-rain').innerHTML = notes + coins;
+  // Modo leve para telas pequenas e aparelhos com interação por toque.
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobileMotion = window.matchMedia('(max-width: 991px), (pointer: coarse)');
+  const rain = document.querySelector('.money-rain');
+  function renderRain() {
+    if (reducedMotion.matches) { rain.replaceChildren(); return; }
+    const noteCount = mobileMotion.matches ? 2 : 9;
+    const coinCount = mobileMotion.matches ? 2 : 6;
+    const notes = Array.from({ length: noteCount }, (_, i) => `<img class="money-note" src="assets/money.svg" alt="" width="55" height="27" style="--x:${8 + i * 80 / Math.max(1, noteCount - 1)}%;--duration:${10 + (i % 4) * 1.5}s;--delay:${-i * 2.7}s">`).join('');
+    const coins = Array.from({ length: coinCount }, (_, i) => `<img class="money-note money-coin" src="assets/coin.svg" alt="" width="28" height="28" style="--x:${20 + i * 52 / Math.max(1, coinCount - 1)}%;--duration:${9 + (i % 3) * 1.8}s;--delay:${-2 - i * 3.1}s">`).join('');
+    rain.innerHTML = notes + coins;
+  }
+  // Mede apenas quando o card muda de tamanho, nunca a cada quadro.
+  function sizeRain() {
+    rain.style.setProperty('--fall-distance', `${rain.clientHeight + 80}px`);
+  }
+  sizeRain();
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(sizeRain).observe(rain);
+  } else {
+    window.addEventListener('resize', sizeRain, { passive: true });
+  }
+  renderRain();
+  mobileMotion.addEventListener('change', renderRain);
+  if ('IntersectionObserver' in window) {
+    const effectsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => target.classList.toggle('effects-offscreen', !isIntersecting));
+    });
+    document.querySelectorAll('.hero, .ticker').forEach((element) => effectsObserver.observe(element));
+  }
   let manualMotionChoice = null;
   let motionPaused = reducedMotion.matches;
   try { const saved = localStorage.getItem('gordao-motion-paused'); if (saved !== null) { manualMotionChoice = saved === 'true'; motionPaused = manualMotionChoice || reducedMotion.matches; } } catch { /* preferência é opcional */ }
   function setMotion(paused) {
     motionPaused = paused;
-    document.body.classList.toggle('motion-paused', paused);
+    document.body.classList.toggle('motion-paused', paused || document.hidden);
     $('motionToggle').setAttribute('aria-pressed', String(paused));
     $('motionToggle').disabled = reducedMotion.matches;
     $('motionToggle').innerHTML = `${icon(paused ? 'play' : 'pause')}<span>${paused ? 'Ativar animações' : 'Pausar animações'}</span>`;
@@ -151,7 +183,10 @@
     manualMotionChoice = !motionPaused; setMotion(manualMotionChoice);
     try { localStorage.setItem('gordao-motion-paused', String(manualMotionChoice)); } catch { /* navegação continua sem armazenamento */ }
   });
-  reducedMotion.addEventListener('change', () => setMotion(reducedMotion.matches || Boolean(manualMotionChoice)));
+  reducedMotion.addEventListener('change', () => {
+    renderRain();
+    setMotion(reducedMotion.matches || Boolean(manualMotionChoice));
+  });
   document.addEventListener('visibilitychange', () => { document.body.classList.toggle('motion-paused', document.hidden || motionPaused); });
   setMotion(motionPaused);
   render();

@@ -14,7 +14,7 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
 /* Modais Bootstrap. */
 .modal-content{background:#111821;border:1px solid #344358;border-radius:14px;color:var(--white)}.modal-header,.modal-footer{border-color:#273443;padding:18px 24px}.modal-header .eyebrow{margin:0;font-size:10px}.modal-body{padding:24px}.product-modal .modal-body{padding-top:0}.modal-product-art{background:var(--pale,#d7ebf4);border-radius:6px;display:flex;justify-content:center;align-items:center;height:235px;margin-bottom:24px}.modal-product-art img{max-width:95%;height:100%;object-fit:contain;mix-blend-mode:multiply}.product-modal h2{font-size:40px;margin-bottom:13px}.product-modal .modal-body>p{font-size:13px;color:#acb9cb;line-height:1.7}.product-modal .modal-body .modal-price{font-family:var(--font-display);font-size:40px;color:var(--blue);font-weight:700;line-height:1.2;margin:18px 0 8px}.product-modal .modal-body .modal-demo-note{font-size:11px;margin-bottom:0}.modal-footer .btn{width:100%}#infoModalText{font-size:14px;color:#bfc9d8;line-height:1.7}
 @keyframes neon-breathe{0%,100%{box-shadow:0 0 4px #a8eeff,0 0 14px #009dffb0,0 0 45px #009dff30,inset 0 0 5px #09aaff,inset 0 0 32px #008eff1a}50%{box-shadow:0 0 6px #b0f1ff,0 0 20px #009dffdf,0 0 55px #009dff40,inset 0 0 7px #09aaff,inset 0 0 40px #008eff22}}
-@keyframes money-fall{0%{top:-40px;opacity:0;transform:translateX(0) rotate(-25deg)}10%{opacity:.6}90%{opacity:.35}100%{top:100%;opacity:0;transform:translateX(40px) rotate(110deg)}}
+@keyframes money-fall{0%{opacity:0;transform:translate3d(0,0,0) rotate(-25deg)}10%{opacity:.6}90%{opacity:.35}100%{opacity:0;transform:translate3d(18px,var(--fall-distance,450px),0) rotate(110deg)}}
 @keyframes ticker-scroll{to{transform:translateX(-50%)}}
 .motion-paused *,.motion-paused *:before,.motion-paused *:after{animation-play-state:paused!important}.motion-paused .payment-card-inner,.motion-paused .product-image,.motion-paused .product-card,.motion-paused .btn,.motion-paused .payment-card{transition:none!important}html:has(.motion-paused){scroll-behavior:auto}
 @media(min-width:1400px){.billboard{padding:44px 60px;grid-template-columns:minmax(0,1fr) 290px;min-height:450px}.name-main{font-size:105px}.name-top{font-size:65px}}
@@ -162,4 +162,25 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
   100% {
     text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
   }
+}
+
+/* A queda move somente transform/opacity, sem recalcular top a cada quadro. */
+.money-rain{contain:layout paint}
+.effects-offscreen,.effects-offscreen *,.effects-offscreen::before,.effects-offscreen::after,.effects-offscreen *::before,.effects-offscreen *::after{animation-play-state:paused!important}
+
+/* Modo leve: neon fixo, quatro partículas sem filtros e faixa sem movimento. */
+@media(max-width:991px),(pointer:coarse){
+  .billboard{animation:none;box-shadow:0 0 4px #a8eeff,0 0 12px #009dff80,inset 0 0 4px #09aaff}
+  .billboard:after{box-shadow:0 0 8px #ffffff88}
+  #heroTitle .name-top{animation:none;text-shadow:0 0 5px #ff005e,0 0 12px #ff005e}
+  #heroTitle .name-main{animation:none;text-shadow:0 0 5px #00d4ff,0 0 12px #00d4ff}
+  .money-note,.money-note.money-coin{filter:none}
+  .ticker{transform:none;margin:0;box-shadow:none}
+  .ticker-track{animation:none;width:100%;padding:10px 16px}
+  .ticker-group{width:100%;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding-right:0}
+  .ticker-group + .ticker-group,.ticker-divider{display:none}
+  .product-card,.product-image{transition:none}
+  .product-card:hover{transform:none;box-shadow:none;border-color:#242e3f}
+  .product-card:hover .product-image{transform:none}
+  .payment-face{box-shadow:none}
 }

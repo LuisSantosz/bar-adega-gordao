@@ -133,3 +133,13 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
     max-width: 180px;
   }
 }
+
+/* Moedas e notas compartilham o recorte e o controle de pausa do letreiro. */
+.money-note.money-coin{width:28px;height:28px;filter:drop-shadow(0 0 6px #f6c34b55)}
+@media(max-width:767px){.money-note.money-coin{width:22px;height:22px}}
+/* Crédito do desenvolvimento, separado dos contatos do estabelecimento. */
+.footer-bottom{flex-wrap:wrap;align-items:center}
+.developer-credit{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 6px;font-size:12px;line-height:1.6}
+.developer-credit a{color:var(--blue);display:inline-flex;align-items:center;min-height:44px;margin-left:8px;text-decoration:underline;text-underline-offset:4px}
+.developer-credit a:hover{color:var(--white)}
+@media(max-width:767px){.footer-bottom{align-items:flex-start}.developer-credit{justify-content:flex-start}.developer-credit a{flex-basis:100%;margin-left:0}}

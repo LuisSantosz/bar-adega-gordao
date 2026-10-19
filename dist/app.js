@@ -131,7 +131,9 @@
   }
 
   // Apenas decoração; não usa áudio, canvas ou bibliotecas de animação extras.
-  document.querySelector('.money-rain').innerHTML = Array.from({ length: 9 }, (_, i) => `<img class="money-note" src="assets/money.svg" alt="" width="55" height="27" style="--x:${4 + i * 10.5}%;--duration:${8 + (i % 4) * 1.5}s;--delay:${-i * 1.7}s">`).join('');
+  const notes = Array.from({ length: 9 }, (_, i) => `<img class="money-note" src="assets/money.svg" alt="" width="55" height="27" style="--x:${4 + i * 10.5}%;--duration:${8 + (i % 4) * 1.5}s;--delay:${-i * 1.7}s">`).join('');
+  const coins = Array.from({ length: 6 }, (_, i) => `<img class="money-note money-coin" src="assets/coin.svg" alt="" width="28" height="28" style="--x:${8 + i * 16}%;--duration:${7 + (i % 3) * 1.8}s;--delay:${-1.2 - i * 2.1}s">`).join('');
+  document.querySelector('.money-rain').innerHTML = notes + coins;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let manualMotionChoice = null;
   let motionPaused = reducedMotion.matches;

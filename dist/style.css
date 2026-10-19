@@ -105,4 +105,31 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
  .billboard-image-bottom{grid-column:2;grid-row:3;justify-self:end}
  .payment-illustration{max-width:130px}
 }
+/* Computador */
+@media (min-width: 992px) {
+  /* Espaço para as imagens esquerda e direita do letreiro */
+  .billboard {
+    grid-template-columns: 160px minmax(0, 1fr) 160px;
+  }
 
+  /* Espaço para a imagem entre o texto e o cartão */
+  .payment-layout {
+    grid-template-columns: minmax(0, 1fr) 260px minmax(0, 1.4fr);
+  }
+
+  .payment-illustration {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  .billboard-image {
+    width: 90px;
+  }
+
+  .payment-illustration {
+    max-width: 180px;
+  }
+}

@@ -62,6 +62,8 @@
   src: url(HTxwL3I-JCGChYJ8VI-L6OO_au7B45L0_3E.ttf) format('truetype');
 }
 
-@font-face {font-family:'Rubik Spray Paint';font-style:normal;font-weight:400;font-display:swap;src:url('RubikSprayPaint-Regular.ttf') format('truetype');}
+
 
 @font-face {font-family:'Permanent Marker';font-style:normal;font-weight:400;font-display:swap;src:url('PermanentMarker-Regular.ttf') format('truetype');}
+
+@font-face{font-family:'Clip';font-style:normal;font-weight:400;font-display:swap;src:url('Clip.ttf') format('truetype');}

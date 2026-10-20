@@ -168,7 +168,7 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
 .money-rain{contain:layout paint}
 .effects-offscreen,.effects-offscreen *,.effects-offscreen::before,.effects-offscreen::after,.effects-offscreen *::before,.effects-offscreen *::after{animation-play-state:paused!important}
 
-/* Modo leve: neon fixo, quatro partículas sem filtros e faixa sem movimento. */
+/* Modo leve: neon fixo, quatro partículas sem filtros e carrossel com movimento leve. */
 @media(max-width:991px),(pointer:coarse){
   .billboard{animation:none;box-shadow:0 0 4px #a8eeff,0 0 12px #009dff80,inset 0 0 4px #09aaff}
   .billboard:after{box-shadow:0 0 8px #ffffff88}
@@ -176,11 +176,16 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,i
   #heroTitle .name-main{animation:none;text-shadow:0 0 5px #00d4ff,0 0 12px #00d4ff}
   .money-note,.money-note.money-coin{filter:none}
   .ticker{transform:none;margin:0;box-shadow:none}
-  .ticker-track{animation:none;width:100%;padding:10px 16px}
-  .ticker-group{width:100%;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding-right:0}
-  .ticker-group + .ticker-group,.ticker-divider{display:none}
+  .ticker-track{animation-duration:35s}
   .product-card,.product-image{transition:none}
   .product-card:hover{transform:none;box-shadow:none;border-color:#242e3f}
   .product-card:hover .product-image{transform:none}
   .payment-face{box-shadow:none}
+}
+
+/* Exibe todas as categorias sem rolagem quando o usuário reduz movimentos. */
+@media(prefers-reduced-motion:reduce){
+  .ticker-track{width:100%;padding:10px 16px}
+  .ticker-group{width:100%;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding-right:0}
+  .ticker-group + .ticker-group,.ticker-divider{display:none}
 }

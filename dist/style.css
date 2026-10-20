@@ -53,7 +53,7 @@
  .billboard-characters{width:100%;max-width:280px;gap:4px;margin:18px auto 0;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);align-items:end}
  .character{width:100%;max-width:100%;height:clamp(68px,20vw,94px);aspect-ratio:auto;object-fit:contain;object-position:center bottom}
  .character-left,.character-right{align-self:end;transform:translateY(-12px)}
- .character-main{height:clamp(88px,26vw,122px);transform:none}
+ .character-main{height:clamp(88px,26vw,122px);transform:scale(1.35);transform-origin:center bottom}
  #heroTitle .name-top{font-size:clamp(18px,8.5cqi,50px)}
  #heroTitle .name-main{font-size:clamp(24px,12cqi,72px)}
 }

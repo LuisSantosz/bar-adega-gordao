@@ -1,0 +1,28 @@
+/* Teste isolado: carregado apenas em teste-liberty.html.
+   Liberty é o nome usado no exemplo; o arquivo identifica LIBRARY 3 AM soft. */
+@font-face {
+  font-family: 'Liberty';
+  src: url('assets/liberty.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.test-navigation{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 20px;padding:12px 24px;background:#111820;color:#b6cbd8;font-size:13px}
+.test-navigation a{color:#d9fdff;text-decoration:underline;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.liberty-test #heroTitle{font-family:'Liberty',Arial,sans-serif;font-weight:400;transform:none;line-height:1.5;letter-spacing:0}
+.liberty-test #heroTitle .name-top,
+.liberty-test #heroTitle .name-main{font-family:inherit;font-weight:400;color:#d9fdff;animation:none;text-shadow:0 0 18px #00f0ff;letter-spacing:-.02em;white-space:nowrap}
+.liberty-test #heroTitle .name-top{font-size:clamp(20px,10cqi,78px)}
+.liberty-test #heroTitle .name-main{font-size:clamp(26px,14cqi,108px);margin-top:6px}
+.liberty-letter{display:inline-block}
+.liberty-flicker{transform:translate(-.025em,.12em) rotate(10deg);animation:liberty-flicker 4s ease-in-out infinite}
+@keyframes liberty-flicker{
+  0%,12%,18%,26%,100%{opacity:1;transform:translate(-.025em,.12em) rotate(10deg)}
+  15%,22%{opacity:.25;transform:translate(-.025em,.12em) rotate(10deg)}
+  55%{opacity:1;transform:translate(-.025em,.12em) rotate(13deg)}
+}
+@media(max-width:991px),(pointer:coarse){
+  .liberty-test #heroTitle .name-top,.liberty-test #heroTitle .name-main{text-shadow:0 0 8px #00f0ff}
+  .liberty-flicker{animation:none}
+}
+@media(prefers-reduced-motion:reduce){.liberty-flicker{animation:none;transform:none}}

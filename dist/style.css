@@ -40,12 +40,20 @@
 .character{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;object-position:bottom;min-width:0;pointer-events:none}
 .character-left,.character-right{align-self:center;position:relative;z-index:1;transform:translateY(-12%)}
 .character-main{position:relative;z-index:2;transform:scale(1.14);transform-origin:bottom center}
+/* Imagens com limites próprios: não crescem com toda a largura do card. */
+@media(min-width:768px) and (max-width:991px){
+ .billboard{padding:48px 30px 0}
+ .billboard-characters{max-width:480px;margin-top:20px;margin-bottom:-16px;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr)}
+ .character-main{transform:none}
+}
 @media(max-width:767px){
- .hero{padding-bottom:38px}
- .billboard{padding:42px 16px 0;border-radius:46% 46% 24px 24px / 18% 18% 24px 24px}
+ .hero{padding-bottom:24px}
+ .billboard{padding:30px 16px 14px;border-radius:46% 46% 24px 24px / 16% 16% 24px 24px}
  .billboard:before{inset:7px}
- .billboard-characters{gap:0;margin-top:18px;margin-bottom:-16px;grid-template-columns:1fr 1.3fr 1fr}
- .character-main{transform:scale(1.1)}
+ .billboard-characters{width:100%;max-width:280px;gap:4px;margin:18px auto 0;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr) minmax(0,1fr);align-items:end}
+ .character{width:100%;max-width:100%;height:clamp(68px,20vw,94px);aspect-ratio:auto;object-fit:contain;object-position:center bottom}
+ .character-left,.character-right{align-self:end;transform:translateY(-12px)}
+ .character-main{height:clamp(88px,26vw,122px);transform:none}
  #heroTitle .name-top{font-size:clamp(18px,8.5cqi,50px)}
  #heroTitle .name-main{font-size:clamp(24px,12cqi,72px)}
 }

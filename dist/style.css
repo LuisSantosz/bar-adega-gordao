@@ -11,9 +11,9 @@
 #heroTitle .name-top{font-size:clamp(20px,10cqi,78px)}
 #heroTitle .name-main{font-size:clamp(26px,14cqi,108px);margin-top:6px}
 .clip-letter{display:inline-block}
-.clip-flicker,.name-top .clip-letter:nth-child(2){animation:clip-blink 10s 2s linear infinite}
-.name-top .clip-letter:nth-child(7){animation:clip-blink 13s 1s linear infinite}
-.name-main .clip-letter:nth-child(7){animation:clip-blink 15s 4s linear infinite}
+.clip-flicker,.name-top .clip-letter:nth-child(2){animation:clip-blink 10s -2s linear infinite}
+.name-top .clip-letter:nth-child(7){animation:clip-blink 13s -6s linear infinite}
+.name-main .clip-letter:nth-child(7){animation:clip-blink 15s -10s linear infinite}
 @keyframes clip-shine{from{opacity:.15}to{opacity:1}}
 
 @keyframes clip-voltage{0%,24%,42%,68%,100%{opacity:1}6%,16%,28%,44%,58%,72%,95%{opacity:.93}38%{opacity:.8}}
@@ -21,7 +21,7 @@
 
 @media(max-width:991px),(pointer:coarse){
 #heroTitle .name-top,#heroTitle .name-main{animation:none;text-shadow:0 0 5px #e6f7ff,0 0 12px #65caff,0 0 20px #2483ff}
-#heroTitle .clip-letter{animation:none}
+/* Falhas por opacidade continuam ativas no celular. */
 }
 @media(prefers-reduced-motion:reduce){#heroTitle,#heroTitle *{animation:none!important;opacity:1}}
 

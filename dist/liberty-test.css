@@ -15,14 +15,26 @@
 .liberty-test #heroTitle .name-top{font-size:clamp(20px,10cqi,78px)}
 .liberty-test #heroTitle .name-main{font-size:clamp(26px,14cqi,108px);margin-top:6px}
 .liberty-letter{display:inline-block}
-.liberty-flicker{transform:translate(-.025em,.12em) rotate(10deg);animation:liberty-flicker 4s ease-in-out infinite}
+/* Circuitos independentes: A de BAR, E de ADEGA, O e Ã de GORDÃO.
+   Somente opacity é animada; o brilho e a inclinação ficam fixos. */
+.liberty-test #heroTitle .name-top .liberty-letter:nth-child(2),
+.liberty-test #heroTitle .name-top .liberty-letter:nth-child(7),
+.liberty-test #heroTitle .name-main .liberty-letter:nth-child(7),
+.liberty-flicker{
+  animation:liberty-flicker var(--fault-duration,9s) linear infinite;
+  animation-delay:var(--fault-delay,0s);
+}
+.liberty-flicker{transform:translate(-.025em,.12em) rotate(10deg);--fault-duration:9s;--fault-delay:-2s}
+.liberty-test #heroTitle .name-top .liberty-letter:nth-child(2){--fault-duration:11s;--fault-delay:-6s}
+.liberty-test #heroTitle .name-top .liberty-letter:nth-child(7){--fault-duration:13s;--fault-delay:-1s}
+.liberty-test #heroTitle .name-main .liberty-letter:nth-child(7){--fault-duration:15s;--fault-delay:-9s}
 @keyframes liberty-flicker{
-  0%,12%,18%,26%,100%{opacity:1;transform:translate(-.025em,.12em) rotate(10deg)}
-  15%,22%{opacity:.25;transform:translate(-.025em,.12em) rotate(10deg)}
-  55%{opacity:1;transform:translate(-.025em,.12em) rotate(13deg)}
+  0%,9%,19%,57%,67%,100%{opacity:1}
+  12%,16%{opacity:.18}
+  60%,64%{opacity:.45}
 }
 @media(max-width:991px),(pointer:coarse){
   .liberty-test #heroTitle .name-top,.liberty-test #heroTitle .name-main{text-shadow:0 0 8px #00f0ff}
-  .liberty-flicker{animation:none}
+  .liberty-test #heroTitle .liberty-letter{animation:none}
 }
 @media(prefers-reduced-motion:reduce){.liberty-flicker{animation:none;transform:none}}

@@ -4,7 +4,7 @@
 .hero-topline{justify-content:flex-end;margin-bottom:12px}
 .gold-sign{width:min(100%,520px);margin:0 auto;padding:12px;border:1px solid #65caff;border-radius:36px;background:#000;box-shadow:0 0 5px #65caff,0 0 18px #65caff,0 0 42px #65caff,inset 0 0 14px #ffca281f;animation:gold-neon 4s ease-in-out infinite}
 .gold-sign-image{display:block;width:100%;height:auto;max-width:100%;border-radius:24px;object-fit:contain}
-@keyframes gold-neon{0%,100%{box-shadow:0 0 5px #65caff,0 0 18px #65caff,0 0 42px #65caff,inset 0 0 14px #ffca281f}50%{box-shadow:0 0 7px #65caff,0 0 24px #65caff,0 0 52px #65caff,inset 0 0 18px #ffca2826}}
+@keyframes gold-neon{0%,100%{box-shadow:0 0 5px #65caff,0 0 18px #65caff,0 0 42px #65caff,inset 0 0 14px #ffca281f}50%{box-shadow:0 0 7px #65caff,0 0 24px #65caff,0 0 52px #65caff,inset 0 0 18px #1E90FF}}
 .motion-paused .gold-sign,.effects-offscreen .gold-sign{animation-play-state:paused}
 @media(max-width:767px){.hero{padding:8px 0 28px}.hero .container{padding-inline:24px}.hero-topline{margin-bottom:10px}.gold-sign{width:min(100%,350px);padding:8px;border-radius:26px;animation:none}.gold-sign-image{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){.gold-sign{animation:none}}

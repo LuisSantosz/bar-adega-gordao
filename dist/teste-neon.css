@@ -1,10 +1,19 @@
-/* Estilos exclusivos da página de teste. */
+/* Exclusivo do teste neon. */
 .hero{padding:16px 0 42px;background-color:#050505}
-.hero-glow{background:radial-gradient(ellipse at 50% 45%,#ffc40020,transparent 65%)}
-.hero-topline{justify-content:flex-end;margin-bottom:12px}
-.gold-sign{width:min(100%,520px);margin:0 auto;padding:12px;border:1px solid #65caff;border-radius:36px;background:#000;box-shadow:0 0 5px #65caff,0 0 18px #65caff,0 0 42px #65caff,inset 0 0 14px #ffca281f;animation:gold-neon 4s ease-in-out infinite}
-.gold-sign-image{display:block;width:100%;height:auto;max-width:100%;border-radius:24px;object-fit:contain}
-@keyframes gold-neon{0%,100%{box-shadow:0 0 5px #65caff,0 0 18px #65caff,0 0 42px #65caff,inset 0 0 14px #ffca281f}50%{box-shadow:0 0 7px #65caff,0 0 24px #65caff,0 0 52px #65caff,inset 0 0 18px #1E90FF}}
-.motion-paused .gold-sign,.effects-offscreen .gold-sign{animation-play-state:paused}
-@media(max-width:767px){.hero{padding:8px 0 28px}.hero .container{padding-inline:24px}.hero-topline{margin-bottom:10px}.gold-sign{width:min(100%,350px);padding:8px;border-radius:26px;animation:none}.gold-sign-image{border-radius:18px}}
-@media(prefers-reduced-motion:reduce){.gold-sign{animation:none}}
+.hero-glow{background:radial-gradient(ellipse at 20% 50%,#009dff24,transparent 50%),radial-gradient(ellipse at 80% 55%,#ff299c21,transparent 50%)}
+.hero-topline{justify-content:flex-end;margin-bottom:16px}
+.gold-sign{position:relative;isolation:isolate;width:min(100%,1040px);min-height:500px;margin:auto;padding:28px 26%;border:1px solid #80d9ff;border-radius:40px;background:radial-gradient(ellipse at center,#3b280e55,transparent 65%),#050608;box-shadow:0 0 5px #65caff,0 0 20px #168cff66,inset 0 0 24px #168cff18;overflow:hidden}
+.gold-sign-image{position:relative;z-index:2;display:block;width:100%;height:auto;max-width:490px;margin:auto;object-fit:contain;filter:drop-shadow(0 0 14px #ffc43233)}
+.neon-decor{position:absolute;inset:0;pointer-events:none;z-index:1}
+.neon-item{position:absolute;overflow:visible;filter:drop-shadow(0 0 3px currentColor) drop-shadow(0 0 9px currentColor);animation:neon-pulse 5s ease-in-out infinite}
+.blue-neon{color:#38bfff}.pink-neon{color:#ff48b1;animation-delay:-2s}.gold-neon{color:#ffc84b;animation-delay:-3s}
+.hookah-left{width:19%;height:55%;left:2%;top:5%;transform:rotate(-9deg)}
+.spirit-left{width:10%;height:37%;left:13%;bottom:9%;transform:rotate(12deg)}
+.beer-left{width:8%;height:29%;left:3%;bottom:7%;transform:rotate(-13deg)}
+.hookah-right{width:19%;height:55%;right:2%;top:5%;transform:rotate(9deg)}
+.spirit-right{width:10%;height:37%;right:13%;bottom:9%;transform:rotate(-12deg)}
+.beer-right{width:8%;height:29%;right:3%;bottom:7%;transform:rotate(13deg)}
+@keyframes neon-pulse{0%,100%{opacity:1}50%{opacity:.68}}
+.motion-paused .neon-item,.effects-offscreen .neon-item{animation-play-state:paused}
+@media(max-width:767px){.hero{padding:8px 0 28px}.hero .container{padding-inline:16px}.gold-sign{min-height:0;padding:36px 18%;border-radius:26px}.gold-sign-image{width:100%}.neon-item{animation:none;filter:drop-shadow(0 0 3px currentColor)}.hookah-left,.hookah-right{width:20%;height:44%;top:6%}.hookah-left{left:-3%}.hookah-right{right:-3%}.spirit-left,.spirit-right{width:11%;height:26%;bottom:13%}.spirit-left{left:5%}.spirit-right{right:5%}.beer-left,.beer-right{width:8%;height:18%;bottom:4%}.beer-left{left:11%}.beer-right{right:11%}}
+@media(prefers-reduced-motion:reduce){.neon-item{animation:none}}

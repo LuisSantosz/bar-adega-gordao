@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080b11">
   <meta name="description" content="Conheça o catálogo do Bar e Adega do Gordão. Consulte bebidas, preços e formas de pagamento. Versão demonstrativa.">
-  <title>Bar e Adega do Gordão | Teste neon dourado</title>
+  <title>Bar e Adega do Gordão | Teste neon azul, dourado e rosa</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="teste-neon.css">
+  <link rel="stylesheet" href="teste-neon.css?versao=3">
   <script defer src="vendor/bootstrap.bundle.min.js"></script>
   <script defer src="catalogo.js"></script>
   <script defer src="app.js"></script>
@@ -40,14 +40,27 @@
  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
 </defs></svg>
 
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="neon-hookah" viewBox="0 0 160 260"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M62 22h36l-6 19H68zM80 42v30M52 73h56l-9 10H61zM80 84v65M70 98h20M70 124h20M66 149h28l4 19c4 17 21 28 19 48-2 20-19 27-37 27s-35-7-37-27c-2-20 15-31 19-48zM48 212h64M56 233h48M92 104c62-5 63 87 29 86-29-1-18-56 14-35M135 155l6-44M136 110l10 2M74 10c-8-9 15-10 6-24"/></g></symbol>
+<symbol id="neon-spirit" viewBox="0 0 110 240"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M42 13h26v49c0 15 27 21 27 39v112c0 8-6 12-14 12H29c-8 0-14-4-14-12V101c0-18 27-24 27-39zM42 24h26M42 48h26M25 114h60v67H25zM30 199h50"/><path d="m55 127 16 20-16 20-16-20z"/></g></symbol>
+<symbol id="neon-beer" viewBox="0 0 90 240"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M34 12h22v58c0 20 19 27 19 49v96c0 7-5 11-12 11H27c-7 0-12-4-12-11v-96c0-22 19-29 19-49zM34 24h22M26 133h38v56H26zM29 209h32M34 51h22"/></g></symbol>
+</defs></svg>
 <main>
 <section class="hero" id="inicio" aria-labelledby="heroTitle">
  <div class="hero-glow" aria-hidden="true"></div>
  <div class="container">
   <div class="hero-topline"><button class="motion-control" id="motionToggle" type="button" aria-pressed="false"><svg class="icon"><use href="#i-pause"/></svg><span>Pausar animações</span></button></div>
   <div class="gold-sign">
+<div class="neon-decor" aria-hidden="true">
+<svg class="neon-item hookah-left blue-neon"><use href="#neon-hookah"/></svg>
+<svg class="neon-item spirit-left pink-neon"><use href="#neon-spirit"/></svg>
+<svg class="neon-item beer-left gold-neon"><use href="#neon-beer"/></svg>
+<svg class="neon-item hookah-right pink-neon"><use href="#neon-hookah"/></svg>
+<svg class="neon-item spirit-right gold-neon"><use href="#neon-spirit"/></svg>
+<svg class="neon-item beer-right blue-neon"><use href="#neon-beer"/></svg>
+</div>
    <h1 id="heroTitle" class="visually-hidden">Bar e Adega do Gordão</h1>
-   <img class="gold-sign-image" src="assets/teste2.jpeg" alt="Bar e Adega do Gordão — Rua Bahia, nº 22" width="1193" height="1319" fetchpriority="high" decoding="async">
+   <img class="gold-sign-image" src="assets/gordao-urso-teste.webp" alt="Bar e Adega do Gordão — Rua Bahia, nº 22" width="1193" height="1319" fetchpriority="high" decoding="async">
   </div>
   <div class="money-rain" hidden aria-hidden="true"></div>
  </div>
@@ -89,6 +102,3 @@
 <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-4" id="infoModalTitle"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar aviso"></button></div><div class="modal-body" id="infoModalText"></div><div class="modal-footer"><button type="button" class="btn btn-electric" data-bs-dismiss="modal">Entendi</button></div></div></div></div>
 </body>
 </html>
-
-
-

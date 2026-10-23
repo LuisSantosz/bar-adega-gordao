@@ -24,10 +24,10 @@ window.CATALOGO = {
   ],
   /* Valores ilustrativos, não são preços confirmados da adega. */
   produtos: [
-    { id: 'gin', nome: 'Gin', categoria: 'gin', tipo: 'Gin', volume: 'Consulte opções', preco: null, imagem: 'assets/categoria-gin.svg', cor: 'blue', descricao: 'Consulte as marcas, tamanhos e preços disponíveis no estabelecimento.' },
-    { id: 'suco', nome: 'Suco', categoria: 'sucos', tipo: 'Suco', volume: 'Consulte opções', preco: null, imagem: 'assets/categoria-suco.svg', cor: 'orange', descricao: 'Consulte os sabores, tamanhos e preços disponíveis no estabelecimento.' },
-    { id: 'gelo', nome: 'Gelo', categoria: 'gelo', tipo: 'Gelo', volume: 'Consulte opções', preco: null, imagem: 'assets/categoria-gelo.svg', cor: 'blue', descricao: 'Consulte os tamanhos de pacote e preços disponíveis no estabelecimento.' },
-    { id: 'copo', nome: 'Copo', categoria: 'copos', tipo: 'Copo', volume: 'Consulte opções', preco: null, imagem: 'assets/categoria-copo.svg', cor: 'pink', descricao: 'Consulte os modelos, tamanhos e preços disponíveis no estabelecimento.' },
+    { id: 'gin', nome: 'Gin', categoria: 'gin', tipo: 'Gin', volume: 'Consulte opções', preco: null, imagem: 'assets/produto-gin.jpg', cor: 'blue', descricao: 'Foto de referência. Marcas e embalagens disponíveis podem variar. Consulte as opções e preços no estabelecimento.' },
+    { id: 'suco', nome: 'Suco', categoria: 'sucos', tipo: 'Suco', volume: 'Consulte opções', preco: null, imagem: 'assets/produto-suco.jpg', cor: 'orange', descricao: 'Foto de referência. Sabores e embalagens disponíveis podem variar. Consulte as opções e preços no estabelecimento.' },
+    { id: 'gelo', nome: 'Gelo', categoria: 'gelo', tipo: 'Gelo', volume: 'Consulte opções', preco: null, imagem: 'assets/produto-gelo.jpg', cor: 'blue', descricao: 'Foto de referência. Consulte os tamanhos de pacote e preços disponíveis no estabelecimento.' },
+    { id: 'copo', nome: 'Copo', categoria: 'copos', tipo: 'Copo', volume: 'Consulte opções', preco: null, imagem: 'assets/produto-copo.jpg', cor: 'pink', descricao: 'Foto de referência. Consulte os modelos, tamanhos e preços disponíveis no estabelecimento.' },
     { id: 'heineken', nome: 'Heineken', categoria: 'cervejas', tipo: 'Long neck', volume: '330 ml', preco: 8.99, imagem: 'assets/heineken.jpg', cor: 'lime', descricao: 'Cerveja Heineken em garrafa long neck. Consulte a disponibilidade no estabelecimento.' },
     { id: 'budweiser', nome: 'Budweiser', categoria: 'cervejas', tipo: 'Lata', volume: '350 ml', preco: 4.99, imagem: 'assets/budweiser.jpg', cor: 'pink', descricao: 'Cerveja Budweiser em lata. Consulte a disponibilidade no estabelecimento.' },
     { id: 'jack-daniels', nome: 'Jack Daniel’s', categoria: 'whisky', tipo: 'Whisky', volume: '1 litro', preco: 149.90, imagem: 'assets/jack-daniels.jpg', cor: 'yellow', descricao: 'Whisky Jack Daniel’s Old No. 7. Preço por garrafa. Consulte a disponibilidade no estabelecimento.' },

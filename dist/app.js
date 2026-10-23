@@ -29,7 +29,7 @@
     const category = categorias.find((c) => c.id === product.categoria)?.nome || 'Bebida';
     return `<div class="col-6 col-lg-4 product-grid-col"><article class="card product-card color-${colorClass(product.cor)}">
       <div class="product-art"><span class="product-badge">${escape(category)}</span><img class="product-image" src="${safeImage(product.imagem)}" alt="${escape(product.nome)} — ${escape(product.volume)}" width="300" height="300" loading="lazy" decoding="async"></div>
-      <div class="card-body product-body"><span class="product-type">${escape(product.tipo)} <span aria-hidden="true">/</span> ${escape(product.volume)}</span><h3>${escape(product.nome)}</h3><div class="price-line"><span class="price" aria-label="${hasPrice ? escape(brl.format(product.preco)) : 'Preço a consultar'}">${hasPrice ? `<span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">${Number(price[0]).toLocaleString('pt-BR')}<small>,${price[1]}</small></span>` : '<small>Consulte</small>'}</span><span class="price-unit">${loja.demonstracao ? 'demonstrativo' : 'por unidade'}</span></div><button type="button" class="product-more" data-product="${escape(product.id)}" aria-label="Ver detalhes de ${escape(product.nome)}">Ver detalhes ${icon('diagonal')}</button></div>
+      <div class="card-body product-body"><span class="product-type">${escape(product.tipo)} <span aria-hidden="true">/</span> ${escape(product.volume)}</span><h3>${escape(product.nome)}</h3><div class="price-line"><span class="price" aria-label="${hasPrice ? escape(brl.format(product.preco)) : 'Preço a consultar'}">${hasPrice ? `<span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">${Number(price[0]).toLocaleString('pt-BR')}<small>,${price[1]}</small></span>` : '<small>Consulte</small>'}</span><span class="price-unit">${(product.demonstracao ?? loja.demonstracao) ? 'demonstrativo' : 'por unidade'}</span></div><button type="button" class="product-more" data-product="${escape(product.id)}" aria-label="Ver detalhes de ${escape(product.nome)}">Ver detalhes ${icon('diagonal')}</button></div>
       </article></div>`;
   }
   function render() {
@@ -83,6 +83,7 @@
     $('modalProductType').textContent = `${product.tipo} / ${product.volume}`;
     $('modalProductDescription').textContent = product.descricao;
     $('modalProductPrice').textContent = Number.isFinite(product.preco) ? brl.format(product.preco) : 'Preço a consultar';
+    $('modalDemoNote').textContent = (product.demonstracao ?? loja.demonstracao) ? 'Preço demonstrativo. Confirme o valor e a disponibilidade no estabelecimento.' : 'Confirme a disponibilidade no estabelecimento.';
     productModal.show();
   });
   $('productModal').addEventListener('hidden.bs.modal', () => { lastProductButton?.focus(); });

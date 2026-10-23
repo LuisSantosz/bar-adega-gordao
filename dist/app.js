@@ -12,23 +12,24 @@
   const colorClass = (color) => colors.has(color) ? color : 'blue';
 
   // Registros inválidos não quebram a consulta dos outros produtos.
-  const validProducts = produtos.filter((p) => p.id && p.nome && Number.isFinite(p.preco) && p.preco >= 0);
+  const validProducts = produtos.filter((p) => p.id && p.nome && (p.preco === null || (Number.isFinite(p.preco) && p.preco >= 0)));
   const searchIndex = new Map(validProducts.map((p) => [p, normalize(`${p.nome} ${p.tipo} ${p.volume} ${categorias.find((c) => c.id === p.categoria)?.nome || ''}`)]));
   let searchTimer;
   function getVisibleProducts() {
     const query = normalize(state.query.trim());
     const result = validProducts.filter((p) => (state.category === 'todos' || p.categoria === state.category) && searchIndex.get(p).includes(query));
-    if (state.sort === 'price-asc') result.sort((a, b) => a.preco - b.preco);
-    if (state.sort === 'price-desc') result.sort((a, b) => b.preco - a.preco);
+    if (state.sort === 'price-asc') result.sort((a, b) => (a.preco ?? Infinity) - (b.preco ?? Infinity));
+    if (state.sort === 'price-desc') result.sort((a, b) => (b.preco ?? -Infinity) - (a.preco ?? -Infinity));
     if (state.sort === 'name') result.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
     return result;
   }
   function productCard(product) {
-    const price = product.preco.toFixed(2).split('.');
+    const hasPrice = Number.isFinite(product.preco);
+    const price = hasPrice ? product.preco.toFixed(2).split('.') : [];
     const category = categorias.find((c) => c.id === product.categoria)?.nome || 'Bebida';
     return `<div class="col-6 col-lg-4 product-grid-col"><article class="card product-card color-${colorClass(product.cor)}">
       <div class="product-art"><span class="product-badge">${escape(category)}</span><img class="product-image" src="${safeImage(product.imagem)}" alt="${escape(product.nome)} — ${escape(product.volume)}" width="300" height="300" loading="lazy" decoding="async"></div>
-      <div class="card-body product-body"><span class="product-type">${escape(product.tipo)} <span aria-hidden="true">/</span> ${escape(product.volume)}</span><h3>${escape(product.nome)}</h3><div class="price-line"><span class="price" aria-label="${escape(brl.format(product.preco))}"><span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">${Number(price[0]).toLocaleString('pt-BR')}<small>,${price[1]}</small></span></span><span class="price-unit">${loja.demonstracao ? 'demonstrativo' : 'por unidade'}</span></div><button type="button" class="product-more" data-product="${escape(product.id)}" aria-label="Ver detalhes de ${escape(product.nome)}">Ver detalhes ${icon('diagonal')}</button></div>
+      <div class="card-body product-body"><span class="product-type">${escape(product.tipo)} <span aria-hidden="true">/</span> ${escape(product.volume)}</span><h3>${escape(product.nome)}</h3><div class="price-line"><span class="price" aria-label="${hasPrice ? escape(brl.format(product.preco)) : 'Preço a consultar'}">${hasPrice ? `<span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">${Number(price[0]).toLocaleString('pt-BR')}<small>,${price[1]}</small></span>` : '<small>Consulte</small>'}</span><span class="price-unit">${loja.demonstracao ? 'demonstrativo' : 'por unidade'}</span></div><button type="button" class="product-more" data-product="${escape(product.id)}" aria-label="Ver detalhes de ${escape(product.nome)}">Ver detalhes ${icon('diagonal')}</button></div>
       </article></div>`;
   }
   function render() {
@@ -81,7 +82,7 @@
     $('modalArt').className = `modal-product-art color-${colorClass(product.cor)}`;
     $('modalProductType').textContent = `${product.tipo} / ${product.volume}`;
     $('modalProductDescription').textContent = product.descricao;
-    $('modalProductPrice').textContent = brl.format(product.preco);
+    $('modalProductPrice').textContent = Number.isFinite(product.preco) ? brl.format(product.preco) : 'Preço a consultar';
     productModal.show();
   });
   $('productModal').addEventListener('hidden.bs.modal', () => { lastProductButton?.focus(); });

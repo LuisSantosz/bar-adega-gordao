@@ -1,4 +1,4 @@
-/* Efeito exclusivo da página de teste. */
+/* Logo principal e fumaça animada do narguilé. */
 .hero{padding:16px 0 42px;background-color:#050505}
 .hero-glow{background:radial-gradient(ellipse at 20% 50%,#009dff20,transparent 50%),radial-gradient(ellipse at 80% 55%,#ff299c16,transparent 50%)}
 .hero-topline{justify-content:flex-end;margin-bottom:16px}
@@ -21,3 +21,4 @@
 .motion-paused .hookah-smoke i,.effects-offscreen .hookah-smoke i{animation-play-state:paused}
 @media(max-width:767px){.hero{padding:8px 0 28px}.hero .container{padding-inline:16px}.gold-sign{min-height:0;padding:36px 18%;border-radius:26px}.hookah-smoke i{filter:blur(1cqw)}}
 @media(prefers-reduced-motion:reduce){.hookah-smoke i{animation:none;opacity:0;will-change:auto}}
+

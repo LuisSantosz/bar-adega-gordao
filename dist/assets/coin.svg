@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 40 40">
-<defs><linearGradient id="gold" x2="1" y2="1"><stop stop-color="#fff4aa"/><stop offset=".45" stop-color="#f7c64e"/><stop offset="1" stop-color="#b97512"/></linearGradient></defs>
-<circle cx="20" cy="20" r="18" fill="url(#gold)" stroke="#a9670a" stroke-width="2"/>
-<circle cx="20" cy="20" r="14" fill="none" stroke="#fff0a0" stroke-width="1.5"/>
-<path d="M25 13c-2-3-11-3-11 2 0 5 12 3 12 8 0 6-10 7-13 2M20 8v24" fill="none" stroke="#986008" stroke-width="2.5" stroke-linecap="round"/>
-</svg>

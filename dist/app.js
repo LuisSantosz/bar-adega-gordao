@@ -139,28 +139,6 @@
 
   // Modo leve para telas pequenas e aparelhos com interação por toque.
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const mobileMotion = window.matchMedia('(max-width: 991px), (pointer: coarse)');
-  const rain = document.querySelector('.money-rain');
-  function renderRain() {
-    if (reducedMotion.matches) { rain.replaceChildren(); return; }
-    const noteCount = mobileMotion.matches ? 2 : 9;
-    const coinCount = mobileMotion.matches ? 2 : 6;
-    const notes = Array.from({ length: noteCount }, (_, i) => `<img class="money-note" src="assets/money.svg" alt="" width="55" height="27" style="--x:${8 + i * 80 / Math.max(1, noteCount - 1)}%;--duration:${10 + (i % 4) * 1.5}s;--delay:${-i * 2.7}s">`).join('');
-    const coins = Array.from({ length: coinCount }, (_, i) => `<img class="money-note money-coin" src="assets/coin.svg" alt="" width="28" height="28" style="--x:${20 + i * 52 / Math.max(1, coinCount - 1)}%;--duration:${9 + (i % 3) * 1.8}s;--delay:${-2 - i * 3.1}s">`).join('');
-    rain.innerHTML = notes + coins;
-  }
-  // Mede apenas quando o card muda de tamanho, nunca a cada quadro.
-  function sizeRain() {
-    rain.style.setProperty('--fall-distance', `${rain.clientHeight + 80}px`);
-  }
-  sizeRain();
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(sizeRain).observe(rain);
-  } else {
-    window.addEventListener('resize', sizeRain, { passive: true });
-  }
-  renderRain();
-  mobileMotion.addEventListener('change', renderRain);
   if ('IntersectionObserver' in window) {
     const effectsObserver = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => target.classList.toggle('effects-offscreen', !isIntersecting));
@@ -184,10 +162,10 @@
     try { localStorage.setItem('gordao-motion-paused', String(manualMotionChoice)); } catch { /* navegação continua sem armazenamento */ }
   });
   reducedMotion.addEventListener('change', () => {
-    renderRain();
     setMotion(reducedMotion.matches || Boolean(manualMotionChoice));
   });
   document.addEventListener('visibilitychange', () => { document.body.classList.toggle('motion-paused', document.hidden || motionPaused); });
   setMotion(motionPaused);
   render();
 })();
+

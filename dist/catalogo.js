@@ -1,5 +1,4 @@
-/* Produtos e preços transcritos do cardápio fornecido.
-   Preço null = consultar. Medidas não informadas devem ser confirmadas no balcão. */
+/* Edite os produtos e preços aqui. visual define as cores da foto no card. */
 window.CATALOGO = {
   "loja": {
     "nome": "BAR E ADEGA DO GORDÃO",
@@ -95,7 +94,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-0.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": true
+      "destaque": true,
+      "visual": {
+        "accent": "#70b8cc",
+        "fundo": "#eaf4f7"
+      }
     },
     {
       "id": "budweiser-600",
@@ -108,7 +111,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-1.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc4232",
+        "fundo": "#f7e3e0"
+      }
     },
     {
       "id": "stella-600",
@@ -121,7 +128,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-2.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#8dcc66",
+        "fundo": "#eef7e8"
+      }
     },
     {
       "id": "corona-330",
@@ -134,7 +145,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-9.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": true
+      "destaque": true,
+      "visual": {
+        "accent": "#ccbb40",
+        "fundo": "#f7f5e2"
+      }
     },
     {
       "id": "original-600",
@@ -147,7 +162,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-3.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc422d",
+        "fundo": "#f7e3e0"
+      }
     },
     {
       "id": "skol-600",
@@ -160,7 +179,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-4.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc993c",
+        "fundo": "#f7f0e2"
+      }
     },
     {
       "id": "brahma-600",
@@ -173,7 +196,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-5.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc7744",
+        "fundo": "#f7ebe3"
+      }
     },
     {
       "id": "amstel-600",
@@ -186,7 +213,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-6.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc692d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "eisenbahn-600",
@@ -199,7 +230,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-7.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc672d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "spaten-600",
@@ -212,20 +247,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-8.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
-    },
-    {
-      "id": "ice-275",
-      "nome": "Ice",
-      "categoria": "prontas",
-      "tipo": "Bebidas prontas",
-      "volume": "275 ml",
-      "preco": 8,
-      "demonstracao": false,
-      "imagem": "assets/cardapio-10.jpg",
-      "cor": "purple",
-      "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#66cc56",
+        "fundo": "#e8f7e6"
+      }
     },
     {
       "id": "smirnoff-ice",
@@ -238,20 +264,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-10.jpg",
       "cor": "purple",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
-    },
-    {
-      "id": "beats-269",
-      "nome": "Beats",
-      "categoria": "prontas",
-      "tipo": "Bebidas prontas",
-      "volume": "269 ml",
-      "preco": 9,
-      "demonstracao": false,
-      "imagem": "assets/cardapio-11.jpg",
-      "cor": "purple",
-      "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc6967",
+        "fundo": "#f7e8e8"
+      }
     },
     {
       "id": "skol-beats-269",
@@ -264,7 +281,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-11.jpg",
       "cor": "purple",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2d3dcc",
+        "fundo": "#e0e2f7"
+      }
     },
     {
       "id": "gin-tonica-lata",
@@ -277,7 +298,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-12.jpg",
       "cor": "purple",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#ccc03f",
+        "fundo": "#f7f6e2"
+      }
     },
     {
       "id": "vodka-energetico-lata",
@@ -290,7 +315,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-13.jpg",
       "cor": "purple",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc3941",
+        "fundo": "#f7e1e2"
+      }
     },
     {
       "id": "coca-lata",
@@ -303,7 +332,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-14.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc342f",
+        "fundo": "#f7e1e0"
+      }
     },
     {
       "id": "coca-cola",
@@ -316,7 +349,11 @@ window.CATALOGO = {
       "imagem": "assets/coca-cola.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc4e44",
+        "fundo": "#f7e4e3"
+      }
     },
     {
       "id": "guarana-lata",
@@ -329,7 +366,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-15.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2dcc8c",
+        "fundo": "#e0f7ee"
+      }
     },
     {
       "id": "guarana-2l",
@@ -342,7 +383,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-16.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc6d2d",
+        "fundo": "#f7e9e0"
+      }
     },
     {
       "id": "fanta-lata",
@@ -355,7 +400,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-17.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc682d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "sprite-lata",
@@ -368,7 +417,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-18.jpg",
       "cor": "orange",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2dcc71",
+        "fundo": "#e0f7ea"
+      }
     },
     {
       "id": "red-bull",
@@ -381,7 +434,11 @@ window.CATALOGO = {
       "imagem": "assets/red-bull.jpg",
       "cor": "blue",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#547ecc",
+        "fundo": "#e5ecf7"
+      }
     },
     {
       "id": "monster",
@@ -394,7 +451,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-19.jpg",
       "cor": "blue",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#96cc2d",
+        "fundo": "#eff7e0"
+      }
     },
     {
       "id": "agua-500",
@@ -407,7 +468,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-20.jpg",
       "cor": "blue",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2d73cc",
+        "fundo": "#e0eaf7"
+      }
     },
     {
       "id": "agua-gas-500",
@@ -420,7 +485,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-20.jpg",
       "cor": "blue",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2d73cc",
+        "fundo": "#e0eaf7"
+      }
     },
     {
       "id": "jw-red-porcao",
@@ -433,7 +502,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-21.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc8d31",
+        "fundo": "#f7eee0"
+      }
     },
     {
       "id": "jw-black-porcao",
@@ -446,7 +519,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-22.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc872d",
+        "fundo": "#f7ede0"
+      }
     },
     {
       "id": "old-parr-porcao",
@@ -459,7 +536,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-23.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc9870",
+        "fundo": "#f7f0ea"
+      }
     },
     {
       "id": "chivas-porcao",
@@ -472,7 +553,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-24.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc4236",
+        "fundo": "#f7e3e1"
+      }
     },
     {
       "id": "jack-porcao",
@@ -485,7 +570,11 @@ window.CATALOGO = {
       "imagem": "assets/jack-daniels.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc662d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "ballantines-porcao",
@@ -498,7 +587,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-25.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc3f2d",
+        "fundo": "#f7e2e0"
+      }
     },
     {
       "id": "white-horse-porcao",
@@ -511,7 +604,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-26.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc773d",
+        "fundo": "#f7ebe2"
+      }
     },
     {
       "id": "absolut-porcao",
@@ -524,7 +621,11 @@ window.CATALOGO = {
       "imagem": "assets/absolut.png",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#4e7dcc",
+        "fundo": "#e4ecf7"
+      }
     },
     {
       "id": "smirnoff-porcao",
@@ -537,7 +638,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-27.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc6c65",
+        "fundo": "#f7e9e8"
+      }
     },
     {
       "id": "beefeater-porcao",
@@ -550,7 +655,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-28.jpg",
       "cor": "yellow",
       "descricao": "Preço transcrito do cardápio. A medida não está informada; confirme a porção no estabelecimento. Foto da marca como referência; o preço não representa necessariamente uma garrafa inteira.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc525d",
+        "fundo": "#f7e5e7"
+      }
     },
     {
       "id": "gin-tonica-drink",
@@ -563,7 +672,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-29.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": true
+      "destaque": true,
+      "visual": {
+        "accent": "#cc632d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "gin-tropical",
@@ -576,7 +689,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-29.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc632d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "moscow-mule",
@@ -589,7 +706,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-30.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc7543",
+        "fundo": "#f7eae3"
+      }
     },
     {
       "id": "sex-on-beach",
@@ -602,7 +723,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-31.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc932d",
+        "fundo": "#f7efe0"
+      }
     },
     {
       "id": "tequila-sunrise",
@@ -615,7 +740,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-32.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc8c5f",
+        "fundo": "#f7eee7"
+      }
     },
     {
       "id": "blue-lagoon",
@@ -628,7 +757,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-33.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#2d9ccc",
+        "fundo": "#e0f0f7"
+      }
     },
     {
       "id": "pina-colada",
@@ -641,7 +774,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-34.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#70adcc",
+        "fundo": "#eaf3f7"
+      }
     },
     {
       "id": "aperol-spritz",
@@ -654,7 +791,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-35.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc6c2d",
+        "fundo": "#f7e9e0"
+      }
     },
     {
       "id": "mojito",
@@ -667,7 +808,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-36.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cca66f",
+        "fundo": "#f7f2e9"
+      }
     },
     {
       "id": "vodka-energetico-drink",
@@ -680,7 +825,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-31.jpg",
       "cor": "pink",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": true
+      "destaque": true,
+      "visual": {
+        "accent": "#cc932d",
+        "fundo": "#f7efe0"
+      }
     },
     {
       "id": "caipi-limao",
@@ -693,7 +842,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-37.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": true
+      "destaque": true,
+      "visual": {
+        "accent": "#ccc55e",
+        "fundo": "#f7f6e7"
+      }
     },
     {
       "id": "caipi-morango",
@@ -706,7 +859,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-38.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc4a38",
+        "fundo": "#f7e4e1"
+      }
     },
     {
       "id": "caipi-maracuja",
@@ -719,7 +876,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-39.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc9634",
+        "fundo": "#f7efe1"
+      }
     },
     {
       "id": "caipi-abacaxi",
@@ -732,7 +893,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-40.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc9170",
+        "fundo": "#f7eeea"
+      }
     },
     {
       "id": "caipi-kiwi",
@@ -745,7 +910,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-41.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#c1cc5e",
+        "fundo": "#f6f7e7"
+      }
     },
     {
       "id": "caipi-frutas",
@@ -758,7 +927,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-42.jpg",
       "cor": "lime",
       "descricao": "Preço por unidade. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc8d63",
+        "fundo": "#f7eee8"
+      }
     },
     {
       "id": "balde-heineken",
@@ -771,7 +944,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-43.jpg",
       "cor": "yellow",
       "descricao": "Preço por combo. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#39cc74",
+        "fundo": "#e1f7ea"
+      }
     },
     {
       "id": "balde-budweiser",
@@ -784,7 +961,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-1.jpg",
       "cor": "yellow",
       "descricao": "Preço por combo. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc4232",
+        "fundo": "#f7e3e0"
+      }
     },
     {
       "id": "balde-original",
@@ -797,7 +978,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-3.jpg",
       "cor": "yellow",
       "descricao": "Combo com 5 long neck. O preço não está legível no cardápio; consulte no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc422d",
+        "fundo": "#f7e3e0"
+      }
     },
     {
       "id": "balde-corona",
@@ -810,7 +995,11 @@ window.CATALOGO = {
       "imagem": "assets/cardapio-9.jpg",
       "cor": "yellow",
       "descricao": "Preço por combo. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#ccbb40",
+        "fundo": "#f7f5e2"
+      }
     },
     {
       "id": "combo-whisky",
@@ -823,7 +1012,11 @@ window.CATALOGO = {
       "imagem": "assets/jack-daniels.jpg",
       "cor": "yellow",
       "descricao": "Preço por combo. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#cc662d",
+        "fundo": "#f7e8e0"
+      }
     },
     {
       "id": "combo-vodka",
@@ -836,7 +1029,11 @@ window.CATALOGO = {
       "imagem": "assets/absolut.png",
       "cor": "yellow",
       "descricao": "Preço por combo. Consulte a disponibilidade no estabelecimento. Foto de referência; apresentação pode variar.",
-      "destaque": false
+      "destaque": false,
+      "visual": {
+        "accent": "#4e7dcc",
+        "fundo": "#e4ecf7"
+      }
     },
     {
       "id": "gin",
@@ -848,7 +1045,11 @@ window.CATALOGO = {
       "demonstracao": false,
       "imagem": "assets/eternity-watermelon-900ml.jpg",
       "cor": "pink",
-      "descricao": "Gin Eternity Watermelon sabor melancia, garrafa de 900 ml. Preço por garrafa."
+      "descricao": "Gin Eternity Watermelon sabor melancia, garrafa de 900 ml. Preço por garrafa.",
+      "visual": {
+        "accent": "#cc3a4f",
+        "fundo": "#f7e1e5"
+      }
     },
     {
       "id": "suco",
@@ -860,7 +1061,11 @@ window.CATALOGO = {
       "demonstracao": false,
       "imagem": "assets/maguary-maracuja-1l.jpg",
       "cor": "orange",
-      "descricao": "Suco Maguary sabor maracujá, embalagem de 1 litro. Preço por unidade."
+      "descricao": "Suco Maguary sabor maracujá, embalagem de 1 litro. Preço por unidade.",
+      "visual": {
+        "accent": "#cc2d31",
+        "fundo": "#f7e0e0"
+      }
     },
     {
       "id": "gelo",
@@ -872,7 +1077,11 @@ window.CATALOGO = {
       "demonstracao": false,
       "imagem": "assets/produto-gelo.jpg",
       "cor": "blue",
-      "descricao": "Saco de gelo em cubos. Preço por saco. Consulte o peso no estabelecimento."
+      "descricao": "Saco de gelo em cubos. Preço por saco. Consulte o peso no estabelecimento.",
+      "visual": {
+        "accent": "#50a3cc",
+        "fundo": "#e5f1f7"
+      }
     },
     {
       "id": "copo",
@@ -884,7 +1093,11 @@ window.CATALOGO = {
       "demonstracao": false,
       "imagem": "assets/produto-copo.jpg",
       "cor": "pink",
-      "descricao": "Copo descartável transparente de 500 ml. Preço por unidade."
+      "descricao": "Copo descartável transparente de 500 ml. Preço por unidade.",
+      "visual": {
+        "accent": "#6e8fae",
+        "fundo": "#e5ebf2"
+      }
     }
   ]
 };

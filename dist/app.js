@@ -10,6 +10,8 @@
   const safeImage = (value) => /^(assets\/[a-zA-Z0-9_./-]+)$/.test(value) && !value.includes('..') ? value : 'assets/favicon.svg';
   const colors = new Set(['lime', 'pink', 'yellow', 'blue', 'purple', 'orange']);
   const colorClass = (color) => colors.has(color) ? color : 'blue';
+  const safeHex = (value) => /^#[0-9a-f]{6}$/i.test(value || '') ? value : '';
+  const visualStyle = (product) => [['--accent', safeHex(product.visual?.accent)], ['--pale', safeHex(product.visual?.fundo)]].filter(([, value]) => value).map(([key, value]) => `${key}:${value}`).join(';');
 
   // Registros inválidos não quebram a consulta dos outros produtos.
   const validProducts = produtos.filter((p) => p.id && p.nome && (p.preco === null || (Number.isFinite(p.preco) && p.preco >= 0)));
@@ -27,7 +29,7 @@
     const hasPrice = Number.isFinite(product.preco);
     const price = hasPrice ? product.preco.toFixed(2).split('.') : [];
     const category = categorias.find((c) => c.id === product.categoria)?.nome || 'Bebida';
-    return `<div class="col-6 col-lg-4 product-grid-col"><article class="card product-card color-${colorClass(product.cor)}">
+    return `<div class="col-6 col-lg-4 product-grid-col"><article class="card product-card color-${colorClass(product.cor)}" style="${visualStyle(product)}">
       <div class="product-art"><span class="product-badge">${escape(category)}</span><img class="product-image" src="${safeImage(product.imagem)}" alt="${escape(product.nome)} — ${escape(product.volume)}" width="300" height="300" loading="lazy" decoding="async"></div>
       <div class="card-body product-body"><span class="product-type">${escape(product.tipo)} <span aria-hidden="true">/</span> ${escape(product.volume)}</span><h3>${escape(product.nome)}</h3><div class="price-line"><span class="price" aria-label="${hasPrice ? escape(brl.format(product.preco)) : 'Preço a consultar'}">${hasPrice ? `<span class="currency" aria-hidden="true">R$</span><span aria-hidden="true">${Number(price[0]).toLocaleString('pt-BR')}<small>,${price[1]}</small></span>` : '<small>Consulte</small>'}</span><span class="price-unit">${(product.demonstracao ?? loja.demonstracao) ? 'demonstrativo' : 'por unidade'}</span></div><button type="button" class="product-more" data-product="${escape(product.id)}" aria-label="Ver detalhes de ${escape(product.nome)}">Ver detalhes ${icon('diagonal')}</button></div>
       </article></div>`;
@@ -80,6 +82,7 @@
     $('modalProductImage').src = safeImage(product.imagem);
     $('modalProductImage').alt = `${product.nome}, ${product.volume}`;
     $('modalArt').className = `modal-product-art color-${colorClass(product.cor)}`;
+    $('modalArt').style.cssText = visualStyle(product);
     $('modalProductType').textContent = `${product.tipo} / ${product.volume}`;
     $('modalProductDescription').textContent = product.descricao;
     $('modalProductPrice').textContent = Number.isFinite(product.preco) ? brl.format(product.preco) : 'Preço a consultar';
